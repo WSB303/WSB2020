@@ -6,24 +6,14 @@ public class Main {
         me.firstName = "George";
         me.lastName = "Flinston";
 
-
         Animal dog = new Animal("dog");
         dog.name = "Kaja";
 
+        Car car = new Car("Corolla","Toyota","Blue",2001);
         me.pet = dog;
+        me.car = car;
+        System.out.println(me.car);
 
-
-        dog.feed();
-        dog.walk();
-        dog.feed();
-        dog.walk();
-        dog.walk();
-        dog.walk();
-        dog.walk();
-        dog.walk();
-        dog.walk();
-        dog.walk();
-        dog.feed();
 
     }
 }

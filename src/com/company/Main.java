@@ -13,6 +13,12 @@ public class Main {
         me.pet = dog;
         me.car = car;
         System.out.println(me.car);
+        me.setSalary(1800.0, true);
+        System.out.println(me.getSalary());
+
+
+
+
 
 
     }

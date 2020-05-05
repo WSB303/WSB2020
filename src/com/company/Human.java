@@ -1,12 +1,14 @@
 package com.company;
 
+import org.w3c.dom.ls.LSOutput;
+
 import static java.lang.System.*;
 
 public class Human {
     String firstName;
     String lastName;
     Animal pet;
-    Car car;
+    private Car car;
     Boolean contract;
     Phone phone;
     private Double salary;
@@ -21,6 +23,16 @@ public class Human {
             this.salary = salary;
         } else out.println("Musisz odebrać aneks do umowy od Pani Hani!");
 }
+    public Car getCar(){
+        return this.car;
+    }
 
-
+    public void setCar(Car car) {
+        if(car.price<this.salary){
+            out.println("Kupiłeś auto.");
+            this.car = car;
+        }else if (car.price*1/12<=this.salary){
+            out.println("Kupiłeś auto, ale musiałeś wziąć kredyt.");
+        } else out.println("Nie stać Cię. Weź podwyżkę.");
+    }
 }

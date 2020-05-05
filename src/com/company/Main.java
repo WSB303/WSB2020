@@ -9,12 +9,12 @@ public class Main {
         Animal dog = new Animal("dog");
         dog.name = "Kaja";
 
-        Car car = new Car("Corolla","Toyota","Blue",2001);
+        Car car = new Car("Corolla","Toyota","Blue",2000,5000.0);
         me.pet = dog;
-        me.car = car;
-        System.out.println(me.car);
+
         me.setSalary(1800.0, true);
         System.out.println(me.getSalary());
+        me.setCar(car);
 
 
 

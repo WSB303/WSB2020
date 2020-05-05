@@ -35,4 +35,7 @@ public class Animal {
             System.out.println("Thanks for walk! Actual weight:"+weight+"kg");
         }else System.out.println("You walking with dead animal...");
     }
+    public String toString() {
+        return species + " " + name + " " + weight;
+    }
 }

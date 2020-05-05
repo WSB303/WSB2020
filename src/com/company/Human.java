@@ -1,6 +1,7 @@
 package com.company;
 
-import org.w3c.dom.ls.LSOutput;
+import com.company.device.Car;
+import com.company.device.Phone;
 
 import static java.lang.System.*;
 
@@ -14,6 +15,9 @@ public class Human {
     private Double salary;
     Double getSalary() {
         return this.salary;
+    }
+    public String toString() {
+        return firstName + " " + lastName + " " + pet  + " " + getCar();
     }
 
     void setSalary(Double salary,Boolean contract) {
@@ -33,6 +37,8 @@ public class Human {
             this.car = car;
         }else if (car.price*1/12<=this.salary){
             out.println("Kupiłeś auto, ale musiałeś wziąć kredyt.");
+            this.car = car;
         } else out.println("Nie stać Cię. Weź podwyżkę.");
     }
+
 }

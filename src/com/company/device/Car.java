@@ -1,22 +1,29 @@
 package com.company.device;
 
-public class Car {
+public class Car extends Device {
      public final String model;
-     public final String producent;
+     public final String producer;
      public  String color;
-     public  Integer year;
+     public  Integer yearOfProduction;
      public  Double price;
 
-    public Car(String model, String producent,String color, Integer year,Double price) {
+    public Car(String model, String producer,String color, Integer yearOfProduction,Double price) {
+        super(producer,model,yearOfProduction);
         this.model = model;
-        this.producent = producent;
+        this.producer = producer;
         this.color = color;
-        this.year = year;
+        this.yearOfProduction = yearOfProduction;
         this.price = price;
 
 
     }
-    public String toString() {
-        return model + " " + producent + " " + color + " " + year + " " + price;
+    @Override
+    public void turnOn() {
+        System.out.println("Brrr, brrr");
     }
+    @Override
+    public String toString() {
+        return this.model + " " + this.producer + " " + " " + this.yearOfProduction;
+    }
+
 }

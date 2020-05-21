@@ -1,9 +1,9 @@
-package com.company;
+package com.company.animal;
 
 public class Animal {
     final String species;
-    String name;
-    private Double weight;
+    public String name;
+    public Double weight;
 
     public static final Double DEFAULT_DOG_WEIGHT = 5.0;
     public static final Double DEFAULT_MOUSE_WEIGHT = 0.1;
@@ -37,5 +37,19 @@ public class Animal {
     }
     public String toString() {
         return species + " " + name + " " + weight;
+    }
+
+
+
+    public void sell(Human buyer, Human seller, double price){
+        if (seller.pet != null && buyer.cash >= price){
+            buyer.cash = buyer.cash - price;
+            seller.cash = seller.cash + price;
+            seller.pet = null;
+            buyer.pet = this;
+            System.out.println(seller.firstName+ " " + " sprzedał " + buyer.firstName +" "+ this.name + " za kwote "+ price);
+        }else System.out.println("Nie masz wystarczająco gotówki albo sprzedający nie posiada tego co sprzedaje.");
+
+
     }
 }

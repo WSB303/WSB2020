@@ -1,5 +1,7 @@
 package com.company.device;
 
+import com.company.animal.Human;
+
 public class Car extends Device {
      public final String model;
      public final String producer;
@@ -25,5 +27,15 @@ public class Car extends Device {
     public String toString() {
         return this.model + " " + this.producer + " " + " " + this.yearOfProduction;
     }
+    public void sell(Human buyer, Human seller, double price) {
+        if (seller.car != null && buyer.cash >= price) {
+            buyer.cash = buyer.cash - price;
+            seller.cash = seller.cash + price;
+            seller.car = null;
+            buyer.car = this;
 
+            System.out.println(seller.firstName + " " + " sprzedał " + buyer.firstName + " " + this.producer + " za kwote " + price);
+        } else System.out.println("Nie masz wystarczająco gotówki albo sprzedający nie posiada tego co sprzedaje.");
+
+    }
 }

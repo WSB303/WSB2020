@@ -1,4 +1,4 @@
-package com.company;
+package com.company.animal;
 
 import com.company.device.Car;
 import com.company.device.Phone;
@@ -6,21 +6,22 @@ import com.company.device.Phone;
 import static java.lang.System.*;
 
 public class Human {
-    String firstName;
-    String lastName;
-    Animal pet;
-    private Car car;
-    Boolean contract;
-    Phone phone;
-    private Double salary;
-    Double getSalary() {
+    public String firstName;
+    public String lastName;
+    public Animal pet;
+    public Car car;
+    public Boolean contract;
+    public Phone phone;
+    public Double salary;
+    public Double cash;
+    public Double getSalary() {
         return this.salary;
     }
     public String toString() {
-        return firstName + " " + lastName + " " + pet  + " " + getCar();
+        return firstName + " " + lastName + " " + pet  + " " + getCar() + " " + cash;
     }
 
-    void setSalary(Double salary,Boolean contract) {
+    public void setSalary(Double salary,Boolean contract) {
         if(salary>0 && contract)
         {
             out.println("Twoja wypłata została zmieniona. Nowe dane zostały wysłane do systemu księgowego. ZUS i US wiedzą o zmianie wpłaty");
@@ -39,6 +40,9 @@ public class Human {
             out.println("Kupiłeś auto, ale musiałeś wziąć kredyt.");
             this.car = car;
         } else out.println("Nie stać Cię. Weź podwyżkę.");
+    }
+    public void sell(Human buyer, Human seller, double price) throws Exception {
+        System.out.printf("Nie można kupić ani sprzedać człowieka.");
     }
 
 }

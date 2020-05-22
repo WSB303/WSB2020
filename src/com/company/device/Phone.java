@@ -1,6 +1,6 @@
 package com.company.device;
 
-import com.company.animal.Human;
+import com.company.creatures.Human;
 
 public class Phone extends Device {
     private Integer memory;

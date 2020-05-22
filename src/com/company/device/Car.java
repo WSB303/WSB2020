@@ -1,8 +1,8 @@
 package com.company.device;
 
-import com.company.animal.Human;
+import com.company.creatures.Human;
 
-public class Car extends Device {
+public class Car extends Device   {
      public final String model;
      public final String producer;
      public  String color;

@@ -1,5 +1,6 @@
-package com.company.animal;
+package com.company.creatures;
 
+import com.company.creatures.animal.Animal;
 import com.company.device.Car;
 import com.company.device.Phone;
 
@@ -42,7 +43,7 @@ public class Human {
         } else out.println("Nie stać Cię. Weź podwyżkę.");
     }
     public void sell(Human buyer, Human seller, double price) throws Exception {
-        System.out.printf("Nie można kupić ani sprzedać człowieka.");
+        System.out.print("Nie można kupić ani sprzedać człowieka.");
     }
 
 }

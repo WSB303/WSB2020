@@ -1,7 +1,9 @@
 package com.company;
 
-import com.company.animal.Animal;
-import com.company.animal.Human;
+import com.company.creatures.animal.Animal;
+import com.company.creatures.Human;
+import com.company.creatures.animal.farmAnimal;
+import com.company.creatures.animal.pet;
 import com.company.device.Car;
 import com.company.device.Device;
 import com.company.device.Phone;
@@ -18,7 +20,8 @@ public class Main {
         some.cash = 2000.0;
 
 
-        Animal dog = new Animal("dog");
+        Animal dog = new pet("dog");
+
         dog.name = "Kaja";
         Car passat = new Car("Volkswagen", "Passat", "red", 1997, 2000.0);
         Car rac = new Car("Corolla","Toyota","Blue",2000,5000.0);
@@ -29,17 +32,20 @@ public class Main {
         Phone ph1 = new Phone("Iphone","6+",2015,64);
         me.setSalary(1800.0, true);
         me.phone = ph1;
-
         me.setCar(passat);
         ph1.turnOn();
         car1.turnOn();
-        dog.sell(some,me,200.0);
         ph1.sell(some,me,200.0);
 
         System.out.println(some.phone);
         System.out.println(some.cash);
 
         me.sell(some,me,2300.0);
+        farmAnimal pig = new farmAnimal("pig");
+
+        pig.beEaten();
+        me.pet.beEaten();
+
 
     }
 }

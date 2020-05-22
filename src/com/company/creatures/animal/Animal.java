@@ -1,13 +1,17 @@
-package com.company.animal;
+package com.company.creatures.animal;
 
-public class Animal {
-    final String species;
+import com.company.creatures.Human;
+
+public abstract class Animal implements sellable, Edible, Feedable {
+    final public String species;
     public String name;
-    public Double weight;
+    protected Double weight;
 
     public static final Double DEFAULT_DOG_WEIGHT = 5.0;
     public static final Double DEFAULT_MOUSE_WEIGHT = 0.1;
     public static final Double DEFAULT_LION_WEIGHT = 123.0;
+    public static final Double DEFAULT_FOOD_WEIGHT = 1.0;
+
     public Animal(String species)
     {
         this.species = species;
@@ -23,12 +27,19 @@ public class Animal {
                 break;
         }
     }
-    public void feed() {
+    @Override
+    public void feed()
+    {
+        feed(DEFAULT_FOOD_WEIGHT);
+    }
+    @Override
+    public void feed(Double foodWeight) {
         if(weight>0.0){
             weight++;
             System.out.println("Thanks for food! Actual weight:" +weight+"kg");
         }else System.out.println("You can't feed dead animal.");
     }
+
     public void walk(){
         if(weight>0.0){
             weight--;

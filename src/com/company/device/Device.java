@@ -1,7 +1,7 @@
 package com.company.device;
 
 
-import com.company.animal.Human;
+import com.company.creatures.Human;
 
 public abstract class Device
 {

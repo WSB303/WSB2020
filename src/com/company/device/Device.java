@@ -15,14 +15,13 @@ public abstract class Device
         this.model = model;
         this.yearOfProduction = yearOfProduction;
     }
-    public abstract void turnOn();{
-}
+    public abstract void turnOn();
 
     @Override
     public String toString() {
         return model + " " + producer + " " + " " + yearOfProduction ;
     }
-    public void sell(Human buyer, Human seller, double price) throws Exception {
+    public void sell(Human buyer, Human seller, double price){
         if (seller.phone != null && seller.car != null && buyer.cash >= price) {
             buyer.cash = buyer.cash - price;
             seller.cash = seller.cash + price;

@@ -7,6 +7,9 @@ import com.company.creatures.animal.pet;
 import com.company.device.Car;
 import com.company.device.Device;
 import com.company.device.Phone;
+import com.company.device.type.Disel;
+import com.company.device.type.Electric;
+import com.company.device.type.LPG;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -19,20 +22,21 @@ public class Main {
         some.lastName = "Rakieta";
         some.cash = 2000.0;
 
-
         Animal dog = new pet("dog");
 
         dog.name = "Kaja";
-        Car passat = new Car("Volkswagen", "Passat", "red", 1997, 2000.0);
-        Car rac = new Car("Corolla","Toyota","Blue",2000,5000.0);
+        LPG passat = new LPG("Volkswagen", "Passat", "red", 1997, 2000.0);
+        Electric rac = new Electric("Corolla","Toyota","Blue",2000,5000.0);
         me.pet = dog;
         System.out.println(dog);
         System.out.println(rac);
-        Device car1 = new Car("Corolla","Toyota","Red",2001,2000.0);
+        Disel car1 = new Disel("Corolla","Toyota","Red",2001,2000.0);
         Phone ph1 = new Phone("Iphone","6+",2015,64);
         me.setSalary(1800.0, true);
         me.phone = ph1;
         me.setCar(passat);
+
+
         ph1.turnOn();
         car1.turnOn();
         ph1.sell(some,me,200.0);
@@ -46,6 +50,12 @@ public class Main {
         pig.beEaten();
         me.pet.beEaten();
 
+        me.phone = new Phone("samsung","s10",2019,64);
 
+        me.phone.installAnApp("Something");
+        me.phone.installAnApp("GoogleMaps","1.22v");
+        me.phone.installAnApp("Uber","4v");
+
+        passat.refuel();
     }
 }

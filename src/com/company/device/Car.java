@@ -2,7 +2,7 @@ package com.company.device;
 
 import com.company.creatures.Human;
 
-public class Car extends Device   {
+public abstract class Car extends Device   {
      public final String model;
      public final String producer;
      public  String color;
@@ -16,9 +16,11 @@ public class Car extends Device   {
         this.color = color;
         this.yearOfProduction = yearOfProduction;
         this.price = price;
-
-
     }
+    public abstract void refuel();{
+        System.out.println("You refuel you'r car.");
+    }
+
     @Override
     public void turnOn() {
         System.out.println("Brrr, brrr");
@@ -38,4 +40,5 @@ public class Car extends Device   {
         } else System.out.println("Nie masz wystarczająco gotówki albo sprzedający nie posiada tego co sprzedaje.");
 
     }
+
 }

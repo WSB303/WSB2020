@@ -2,7 +2,7 @@ package com.company.device;
 
 import com.company.creatures.Human;
 
-public abstract class Car extends Device   {
+public class Car extends Device   {
      public final String model;
      public final String producer;
      public  String color;
@@ -17,9 +17,9 @@ public abstract class Car extends Device   {
         this.yearOfProduction = yearOfProduction;
         this.price = price;
     }
-    public abstract void refuel();{
-        System.out.println("You refuel you'r car.");
-    }
+    //public abstract void refuel();{
+      //  System.out.println("You refuel you'r car.");
+   // }
 
     @Override
     public void turnOn() {
@@ -29,16 +29,21 @@ public abstract class Car extends Device   {
     public String toString() {
         return this.model + " " + this.producer + " " + " " + this.yearOfProduction;
     }
-    public void sell(Human buyer, Human seller, double price) {
-        if (seller.car != null && buyer.cash >= price) {
-            buyer.cash = buyer.cash - price;
-            seller.cash = seller.cash + price;
-            seller.car = null;
-            buyer.car = this;
-
+    public void sell(Human buyer, Human seller, double price) throws Exception {
+        if (!seller.hasCar(this)) {
+            throw new Exception("Nie posiadam auta...");
+        }
+        if (!buyer.hasFreeSpace()) {
+            throw new Exception("Kupujący nie ma miejsca!");
+        }
+        if (buyer.cash < price) {
+            throw new Exception("Kupujacy nie ma wystarczająco gotówki");
+        }
+        seller.cash += price;
+        buyer.cash -= price;
+        seller.removeCar(this);
+        buyer.addCar(this);
             System.out.println(seller.firstName + " " + " sprzedał " + buyer.firstName + " " + this.producer + " za kwote " + price);
-        } else System.out.println("Nie masz wystarczająco gotówki albo sprzedający nie posiada tego co sprzedaje.");
-
-    }
+        }
 
 }

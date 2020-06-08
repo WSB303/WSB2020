@@ -11,13 +11,15 @@ import com.company.device.type.Disel;
 import com.company.device.type.Electric;
 import com.company.device.type.LPG;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) throws Exception {
-        Human me = new Human();
+        Human me = new Human(1);
         me.firstName = "George";
         me.lastName = "Flinston";
         me.cash = 1200.0;
-        Human some = new Human();
+        Human some = new Human(1);
         some.firstName = "Zbychu";
         some.lastName = "Rakieta";
         some.cash = 2000.0;
@@ -34,7 +36,8 @@ public class Main {
         Phone ph1 = new Phone("Iphone","6+",2015,64);
         me.setSalary(1800.0, true);
         me.phone = ph1;
-        me.setCar(passat);
+
+
 
 
         ph1.turnOn();
@@ -56,6 +59,18 @@ public class Main {
         me.phone.installAnApp("GoogleMaps","1.22v");
         me.phone.installAnApp("Uber","4v");
 
-        passat.refuel();
+
+        me.setCar(passat,0);
+        System.out.println(Arrays.toString(me.getGarage()));
+        passat.sell(some,me,100.0);
+        System.out.println(Arrays.toString(me.getGarage()));
+
+        System.out.println(Arrays.toString(some.getGarage()));
+
+
+
+
+
+
     }
 }

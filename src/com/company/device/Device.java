@@ -21,8 +21,8 @@ public abstract class Device
     public String toString() {
         return model + " " + producer + " " + " " + yearOfProduction ;
     }
-    public void sell(Human buyer, Human seller, double price){
-        if (seller.phone != null && seller.car != null && buyer.cash >= price) {
+    public void sell(Human buyer, Human seller, double price) throws Exception {
+        if (seller.phone != null && seller.garage != null && buyer.cash >= price) {
             buyer.cash = buyer.cash - price;
             seller.cash = seller.cash + price;
 

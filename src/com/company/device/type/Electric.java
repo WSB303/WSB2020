@@ -11,9 +11,9 @@ public class Electric extends Car {
     }
 
 
-    @Override
-    public void refuel() {
-        System.out.println("Pomyślnie zataknowałeś auto");
-    }
+    //@Override
+    //public void refuel() {
+      //  System.out.println("Pomyślnie zataknowałeś auto");
+   // }
 
 }
